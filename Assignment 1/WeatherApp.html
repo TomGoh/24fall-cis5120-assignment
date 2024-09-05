@@ -1,28 +1,120 @@
-<!-- Create a html template suits the size of a phone screen-->
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Weather App</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="WeatherApp.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App Prototype</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Open Sans', sans-serif;
+            background: url('./radar.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .weather-info {
+            text-align: center;
+            color: white;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3); 
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+            padding-top: 10%;
+        }
+
+        .top-title{
+            text-align: center;
+            display: flex;
+            flex-direction: row; 
+            align-items: center;
+        }
+
+        .top-title img {
+            height: 80px;
+            width: auto;
+        }
+
+        .hourly-precipitation {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            width: 150px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .legend {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            width: 60px;
+            border-radius: 10px;
+            text-align: center;
+            display: flex;
+            justify-content: right;
+        }
+
+        .grad-bar {
+            background: linear-gradient(to bottom, #ffff00, #0000ff);
+            height: 150px;
+            width: 10px;
+            border-radius: 10px;
+            margin-top: 10px;
+            position: relative;
+        }
+
+        .grad-bar div {
+            position: absolute;
+            width: 100%;
+            text-align:right;
+        }
+
+        .grad-bar div:first-child {
+            top: 0;
+            right: 180%;
+            transform: translateX(-300%);
+        }
+
+        .grad-bar div:last-child {
+            bottom: 0;
+            right: 180%;
+            transform: translateX(-300%);
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <div class="weather">
-            <div class="weather-icon">
-                <img src="https://openweathermap.org/img/w/01d.png" alt="Weather Icon">
-            </div>
-            <div class="weather-info">
-                <h1>Weather App</h1>
-                <h2>City Name</h2>
-                <h3>Temperature</h3>
-                <h4>Weather Description</h4>
-            </div>
+    <div class="weather-info">
+        <div class="top-title">
+            <img src="./Heavy Rain Weather.png" alt="Rainy Weather Icon"/>
+            <h1>Rainy</h1>
         </div>
-        <div class="search">
-            <input type="text" placeholder="Enter City Name">
-            <button>Search</button>
+        <p>Rain will stop in 20 minutes</p>
+        <p>UV Index: 0 | Pollen Index: Low</p>
+    </div>
+    <div class="hourly-precipitation">
+        <strong style="text-align: center;">Precipitation</strong>
+        <p>20:00    -   40%</p>
+        <p>21:00    -   20%</p>
+        <p>22:00    -   0%</p>
+        <p>23:00    -   0%</p>
+        <p>00:00    -   0%</p>
+    </div>
+    <div class="legend">
+        <div class="grad-bar">
+            <div>Heavy</div>
+            <div>Light</div>
         </div>
     </div>
 </body>
