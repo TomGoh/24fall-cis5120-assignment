@@ -130,3 +130,8 @@ dist
 .pnp.*
 
 *.DS_Strore
+
+R Self-Study/.Rproj.user
+R Self-Study/RSelfStudy_files
+.Rhistory
+*.csv
