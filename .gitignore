@@ -130,6 +130,7 @@ dist
 .pnp.*
 
 *.DS_Strore
+.DS_Store
 
 R Self-Study/.Rproj.user
 R Self-Study/RSelfStudy_files

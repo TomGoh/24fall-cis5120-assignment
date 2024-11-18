@@ -82,6 +82,10 @@ top10_industries <- industry_metadata %>%
 ggplot(top10_industries, aes(x = reorder(industry, -count), y = count)) +
   geom_bar(stat = "identity") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  theme(axis.text.x = element_text(size = 16),
+        axis.text.y = element_text(size = 16),
+        axis.title = element_text(size = 16),
+        plot.title = element_text(size = 16)) +
   xlab("Industry") +
   ylab("Number of Companies") +
   ggtitle("Number of Companies per Industry")
@@ -164,12 +168,12 @@ t_test_result <- t.test(
   var.equal = FALSE
 )
 
-mean_hi_votes_combined
 cat("Mean hiVote for ARTS_ENTERTAINMENT_RECREATION: ",
     mean_hi_votes_combined$mean_hi_vote[1], "\n")
 cat("Mean hiVote for FINANCIAL_SERVICES_INSURANCE: ",
     mean_hi_votes_combined$mean_hi_vote[2], "\n")
 cat("P-value: ", t_test_result$p.value, "\n")
+print(t_test_result)
 ```
 The p-value is 0.01828607, which is less than the significance level of 0.05.
 Therefore, we reject the null hypothesis and conclude that there is some kinds of relationship between the arts, entertainment, and recreation industry and the financial services industry. 
@@ -375,7 +379,11 @@ ggplot(
   aes(x = reorder(industry, -avg_hi_vote), y = avg_hi_vote)
 ) +
   geom_bar(stat = "identity") +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  theme(axis.text.x = element_text(size = 16),
+        axis.text.y = element_text(size = 16),
+        axis.title = element_text(size = 16),
+        plot.title = element_text(size = 16)) +
   xlab("Industry") +
   ylab("Average hiVote") +
   ggtitle("Average hiVote for each Industry")
